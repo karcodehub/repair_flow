@@ -5,16 +5,32 @@
   <i class='fas fa-arrow-down'></i>
   <div style="display: flex; gap: 10px;">
     <div class="arrival">Use test IoT</div>
-    <div class="arrival">Diagnois</div>
-    <div class="arrival">Diagnois IoT</div>
+    <div class="arrival" (click)="arrivalHandler1()">Diagnois</div>
+    <div class="arrival" (click)="arrivalHandler3()">Diagnois IoT</div>
   </div>
-  <div (click)="arrivalHandler1()"></div>
+{{openNext1}}{{openNext2}}
+  <div *ngIf="openNext3 && !openNext1" style="display: flex; gap: 10px;">
+    <div class="arrival">Physical/Water Damage</div>
+    <div class="arrival">Rear Chasing Damage</div>
+    <div class="arrival">Error 32</div>
+    <div class="arrival">Error 56</div>
+    <div class="arrival">Location issue</div>
+  </div>
+
   <div *ngIf="openNext1">
     <i class="fa-solid fa-arrow-down"></i>
     <div class="arrival">Check Cables & dashboard</div>
     <i class="fa-solid fa-arrow-down"></i>
-    <div class="arrival">Repair</div>
+    <div class="arrival" (click)="arrivalHandler2()">Repair</div>
     <i class="fa-solid fa-arrow-down"></i>
   </div>
+
+  <div *ngIf="openNext2 && openNext1" style="display: flex; gap: 10px;">
+    <div class="arrival">Storage</div>
+    <div class="arrival">Deploy</div>
+    <div class="arrival">Ship</div>
+  </div>
+
+  
 </div>
 </div>

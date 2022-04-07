@@ -1,10 +1,12 @@
 .arrival{
-    height: 30px;
-    width: 50px;
+    height: 40px;
+    width: 90px;
     text-align: center;
     border-radius: 10px;
-    background-color: crimson;
-    font-size: xx-small;
+    background-color: rgb(244, 108, 99);
+    font-size: small;
+    color: white;
+    margin-top: 2%;
 }
 .diagnosis{
     display: flex;
