@@ -8,32 +8,64 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'firstApp';
   openNext=false;
-  openNext1:boolean=false;
-  openNext2:boolean=false;
-  openNext3:boolean=false;
+  openDiagnois:boolean=false;
+  openRepair:boolean=false;
+  openIOT:boolean=false;
+  openPhy:boolean=false;
+  openRear:boolean=false;
+  openE32:boolean=false;
+  openE56:boolean=false;
+  openLoc:boolean=false;
 
   arrivalHandler(){
     console.log("Hii");
     this.openNext=true;
   }
   
-  arrivalHandler1(){
-    console.log("Hii1");
+  arrivalHandlerDiagnois(){
+    console.log("diag");
    
-    this.openNext1=!this.openNext1;
-    this.openNext3=false;
+    this.openDiagnois=!this.openDiagnois;
+    this.openIOT=false;
   }
 
-  arrivalHandler2(){
-    console.log("Hii2");
+  arrivalHandlerRepair(){
+    console.log("Repair");
     
-    this.openNext2=!this.openNext2;
+    this.openRepair=!this.openRepair;
 
   }
 
-  arrivalHandler3(){
-    console.log("Hii3");
-    this.openNext3=!this.openNext3;
-    this.openNext1=this.openNext2=false;
+  arrivalHandlerIOT(){
+    console.log("IOT");
+    this.openIOT=!this.openIOT;
+    this.openDiagnois=this.openRepair=false;
+  }
+
+  arrivalHandlerPhy(){
+    console.log("Phy");
+    this.openPhy=!this.openPhy;
+  }
+
+  arrivalHandlerRear(){
+    console.log("Rear");
+    this.openRear=!this.openRear;
+  }
+  arrivalHandlerE56(){
+    console.log("E56");
+    this.openE56=!this.openE56;
+  }
+  arrivalHandlerE32(){
+    console.log("E32");
+    this.openE32=!this.openE32;
+  }
+  arrivalHandlerLoc(){
+    console.log("Loc");
+    this.openLoc=!this.openLoc;
+  }
+
+  arrivalHandlerDeploy(){
+    console.log("Dep");
+    window.location.href="https://www.youtube.com/";
   }
 }

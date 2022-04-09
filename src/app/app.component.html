@@ -4,30 +4,62 @@
   
   <i class='fas fa-arrow-down'></i>
   <div style="display: flex; gap: 10px;">
-    <div class="arrival">Use test IoT</div>
-    <div class="arrival" (click)="arrivalHandler1()">Diagnois</div>
-    <div class="arrival" (click)="arrivalHandler3()">Diagnois IoT</div>
-  </div>
-{{openNext1}}{{openNext2}}
-  <div *ngIf="openNext3 && !openNext1" style="display: flex; gap: 10px;">
-    <div class="arrival">Physical/Water Damage</div>
-    <div class="arrival">Rear Chasing Damage</div>
-    <div class="arrival">Error 32</div>
-    <div class="arrival">Error 56</div>
-    <div class="arrival">Location issue</div>
+    <div class="arrival" (click)="arrivalHandlerIOT()">Diagnois IoT  
+    </div>
+    <div class="arrival" (click)="arrivalHandlerDiagnois()">Diagnois</div>
+    <div class="arrival" >Use test IoT</div>
+    
   </div>
 
-  <div *ngIf="openNext1">
+  <div *ngIf="openIOT && !openDiagnois" style="display: flex;flex-direction: column;
+   gap: 10px; margin-right: 69%;">
+  <div style="display: flex;">
+    <div class="arrival" (click)="arrivalHandlerPhy()" style="margin-top: 8%;">Physical/Water Damage     
+    </div>
+    <div *ngIf="openPhy">
+      <div class="arrival" style="margin-left: 10%;margin-top: 16%;">PCB/Antena for SP</div>
+    </div>
+  </div>
+
+    <div class="arrival" (click)="arrivalHandlerRear()">Rear Chasing Damage
+      <div *ngIf="openRear">
+        <div class="arrival" style="margin-right: 2%;">SOP</div>
+      </div>
+    </div>
+
+    <div class="arrival" (click)="arrivalHandlerE32()">Error 32
+      <div *ngIf="openE32">
+        <div class="arrival" style="margin: 2%;">SOP</div>
+      </div>
+    </div>
+    
+    <div class="arrival" (click)="arrivalHandlerE56()">Error 56
+      <div *ngIf="openE56">
+        <div class="arrival" style="margin: 2%;">FW Update</div>
+      </div>
+    </div>
+
+    <div class="arrival"(click)="arrivalHandlerLoc()">Location issue
+      <div *ngIf="openLoc">
+        <div class="arrival" style="margin: 2%;">SOP</div>
+      </div>
+    </div>
+
+  </div>
+
+ 
+
+  <div *ngIf="openDiagnois">
     <i class="fa-solid fa-arrow-down"></i>
     <div class="arrival">Check Cables & dashboard</div>
     <i class="fa-solid fa-arrow-down"></i>
-    <div class="arrival" (click)="arrivalHandler2()">Repair</div>
+    <div class="arrival" (click)="arrivalHandlerRepair()">Repair</div>
     <i class="fa-solid fa-arrow-down"></i>
   </div>
 
-  <div *ngIf="openNext2 && openNext1" style="display: flex; gap: 10px;">
-    <div class="arrival">Storage</div>
-    <div class="arrival">Deploy</div>
+  <div *ngIf="openRepair && openDiagnois" style="display: flex; gap: 10px;">
+    <div class="arrival"><a href="https://www.youtube.com/">Storage</a> </div>
+    <div class="arrival"(click)="arrivalHandlerDeploy()">Deploy</div>
     <div class="arrival">Ship</div>
   </div>
 
