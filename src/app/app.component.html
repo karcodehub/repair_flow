@@ -1,47 +1,52 @@
 <div class="display">
-<div class="arrival" (click)="arrivalHandler()">Arraival</div><br>
+<div class="arrival" (click)="arrivalHandler()" style="font-size: x-large;">Arraival</div><br>
 <div *ngIf="openNext" style="display: flex; align-items: center; flex-direction: column;" >
   
   <i class='fas fa-arrow-down'></i>
   <div style="display: flex; gap: 10px;">
-    <div class="arrival" (click)="arrivalHandlerIOT()">Diagnois IoT  
+    <div class="arrival" (click)="arrivalHandlerIOT()" style="font-size: larger;">Diagnois IoT  
     </div>
-    <div class="arrival" (click)="arrivalHandlerDiagnois()">Diagnois</div>
-    <div class="arrival" >Use test IoT</div>
+    <div class="arrival" (click)="arrivalHandlerDiagnois()" style="font-size: larger; text-align: center;">Diagnois</div>
+    <div class="arrival" style="font-size: larger;">Use test IoT</div>
     
   </div>
 
   <div *ngIf="openIOT && !openDiagnois" style="display: flex;flex-direction: column;
-   gap: 10px; margin-right: 69%;">
-  <div style="display: flex;">
-    <div class="arrival" (click)="arrivalHandlerPhy()" style="margin-top: 8%;">Physical/Water Damage     
-    </div>
+   gap: 10px; width: 100%; align-items: flex-start;">
+  <i class='fas fa-arrow-down'></i>
+  <div style="display: flex; position: relative;">
+    <div class="arrival" (click)="arrivalHandlerPhy()" style="margin-top: 8%; font-size: small;">Physical/Water Damage</div>
     <div *ngIf="openPhy">
-      <div class="arrival" style="margin-left: 10%;margin-top: 16%;">PCB/Antena for SP</div>
+      <i class='fas fa-arrow-right'></i> 
+      <div class="arrival" (click)="arrivalHandlerPCB()" style="margin-left: 10%;margin-top: 16%; font-size: small;">PCB/Antena for SP</div>
     </div>
   </div>
 
-    <div class="arrival" (click)="arrivalHandlerRear()">Rear Chasing Damage
+  <div style="display: flex; position: relative;">
+    <div class="arrival" (click)="arrivalHandlerRear()" >Rear Chasing Damage </div>
       <div *ngIf="openRear">
-        <div class="arrival" style="margin-right: 2%;">SOP</div>
+        <div class="arrival" (click)="arrivalHandlerSOPRear()" style="margin-left: 10%;">SOP</div>
       </div>
     </div>
 
-    <div class="arrival" (click)="arrivalHandlerE32()">Error 32
+    <div style="display: flex; position: relative;">
+    <div class="arrival" (click)="arrivalHandlerE32()">Error 32</div>
       <div *ngIf="openE32">
-        <div class="arrival" style="margin: 2%;">SOP</div>
+        <div class="arrival" (click)="arrivalHandlerSOPE32()" style="margin-left: 10%;">SOP</div>
       </div>
     </div>
     
-    <div class="arrival" (click)="arrivalHandlerE56()">Error 56
+    <div style="display: flex; position: relative;">
+    <div class="arrival" (click)="arrivalHandlerE56()">Error 56</div>
       <div *ngIf="openE56">
-        <div class="arrival" style="margin: 2%;">FW Update</div>
+        <div class="arrival" (click)="arrivalHandlerSOPE56()" style="margin-left: 10%;">FW Update</div>
       </div>
     </div>
 
-    <div class="arrival"(click)="arrivalHandlerLoc()">Location issue
+    <div style="display: flex; position: relative;">
+    <div class="arrival"(click)="arrivalHandlerLoc()">Location issue</div>
       <div *ngIf="openLoc">
-        <div class="arrival" style="margin: 2%;">SOP</div>
+        <div class="arrival" (click)="arrivalHandlerSOPLoc()" style="margin-left: 10%;">SOP</div>
       </div>
     </div>
 
@@ -49,18 +54,18 @@
 
  
 
-  <div *ngIf="openDiagnois">
-    <i class="fa-solid fa-arrow-down"></i>
-    <div class="arrival">Check Cables & dashboard</div>
-    <i class="fa-solid fa-arrow-down"></i>
+  <div *ngIf="openDiagnois" style="display: flex; align-items: center; flex-direction: column;">
+    <i class='fas fa-arrow-down'></i>
+    <div class="arrival" style="font-size: small;">Check Cables & dashboard</div>
+    <i class='fas fa-arrow-down'></i>
     <div class="arrival" (click)="arrivalHandlerRepair()">Repair</div>
-    <i class="fa-solid fa-arrow-down"></i>
+    <i class='fas fa-arrow-down'></i>
   </div>
 
   <div *ngIf="openRepair && openDiagnois" style="display: flex; gap: 10px;">
-    <div class="arrival"><a href="https://www.youtube.com/">Storage</a> </div>
-    <div class="arrival"(click)="arrivalHandlerDeploy()">Deploy</div>
-    <div class="arrival">Ship</div>
+    <div class="arrival" (click)="arrivalHandlerStorage()">Storage </div>
+    <div class="arrival" (click)="arrivalHandlerDeploy()">Deploy</div>
+    <div class="arrival" (click)="arrivalHandlerShip()">Ship</div>
   </div>
 
   
