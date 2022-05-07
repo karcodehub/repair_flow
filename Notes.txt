@@ -2,7 +2,7 @@ Angular Tutorial for Beginners: Learn Angular & TypeScript
 https://www.youtube.com/watch?v=k5E2AVpwsko&ab_channel=ProgrammingwithMosh
 
 1)API for interaction between front end and back end 
-2)nmp: Node package manager || module: fileor function
+2)npm: Node package manager || module: fileor function
 3)Angular CLI: command line interface: generate angular code or packages (ng --version)
 4)ng new project_name (generate Angular project), ng serve: to load application in web server to
  create JS and CSS files 
