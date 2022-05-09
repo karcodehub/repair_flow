@@ -1,0 +1,30 @@
+Angular Tutorial for Beginners: Learn Angular & TypeScript
+https://www.youtube.com/watch?v=k5E2AVpwsko&ab_channel=ProgrammingwithMosh
+
+1)API for interaction between front end and back end 
+2)nmp: Node package manager || module: fileor function
+3)Angular CLI: command line interface: generate angular code or packages (ng --version)
+4)ng new project_name (generate Angular project), ng serve: to load application in web server to
+ create JS and CSS files 
+5)e2e: end2end automated to simulate real user
+6)node modules: all 3rd party libiries stored that application depend 
+7)src: source code of application  
+8)assest: store static assest to run app(eg: image or text or video file)
+9)environment: store config settings for different env like production
+10)index.html: that store Angular app, the app-root custom element
+11)main.ts(type script): starting point of app by bootstarp(appmodule), tsc: typeScript compiler
+12) Polyfills: fills the features and style.css: global style for app
+13)package.json: std file all node.js proj has 
+14)cohesion: related should be in one unit
+15Component: Angular is component architecture encapsulate Data, HTML template, Logic for view, app/root component 
+16)Module: container for group of related components--> app module (name of module is name of file , no extensions)
+17)Create component--> register it in module--> add an  elemnent in HTML
+18)decorate: make class into component -creating comp--> @component, properties : selector CSS, tempalte HTML
+  		register: in app.module.ts file: AppComponent (is already defined) and type component here
+		comp.html: element component added 
+19)component.html show default page display of AngularJS
+20)ng g c componnentName(ng:angJS, g:global, c:component)
+21) {{ ... }}: evaluates in RUN time || *ngFor :* directive modifies structure of DOM with element
+22)Services: a class & component should not include any logic apart from presenatation logic (click, dropdown select)
+		compname.service.ts 
+23)dependency injection: providing dependencies of class into its constructor, provider in app module

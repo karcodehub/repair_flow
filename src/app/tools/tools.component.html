@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="form-group col-md-4 filter">
+      <label for="filter">Filter Product</label>
+      <input
+        type="text"
+        class="form-control"
+        matInput
+        placeholder="Filter product"
+        (ngModelChange)="doFilter($event)"
+        [ngModel]="filterCheck"
+        autofocus
+      />
+    </div>
+    <!-- without material usage -->
+    <table class="table table-stripped">
+      <thead class="thead-dark" style="background-color: black; color: white">
+        <tr>
+          <!-- <th scope="col">#</th> -->
+          <th scope="col">DC Code</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Batch Number</th>
+          <th scope="col">Mnf Date</th>
+          <th scope="col">Expiry Date</th>
+          <th scope="col">Available Qty</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let el of activeDrugList
+              | paginate: { itemsPerPage: 10, currentPage: p }
+          "
+        >
+          <td>{{ el.dcCode }}</td>
+          <td>{{ el.productName }}</td>
+          <td>{{ el.batchNumber }}</td>
+          <td>{{ el.mnfDate }}</td>
+          <td>{{ el.expireDate }}</td>
+          <td>{{ el.quantity }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagination">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+  
