@@ -7,16 +7,9 @@ import { ToolsComponent } from './tools/tools.component';
 import { FlowchartComponent } from './flowchart/flowchart.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ToolsComponent,
-    FlowchartComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, ToolsComponent, FlowchartComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
