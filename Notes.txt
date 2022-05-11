@@ -1,5 +1,6 @@
 Angular Tutorial for Beginners: Learn Angular & TypeScript
 https://www.youtube.com/watch?v=k5E2AVpwsko&ab_channel=ProgrammingwithMosh
+Declarative Reactive Programming using RxJS in Angular
 https://www.w3schools.com/angular/angular_intro.asp
 https://www.w3schools.com/angular/tryit.asp?filename=try_ng_select_object_object
 
