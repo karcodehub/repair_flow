@@ -5,17 +5,34 @@ import { MatSort } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { PageSettingsModel } from '@syncfusion/ej2-angular-grids';
 import { FilterSettingsModel } from '@syncfusion/ej2-grids';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTableModule } from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { GridModule, PagerModule, PageService, SortService, FilterService } from '@syncfusion/ej2-angular-grids';
+import {
+  GridModule,
+  PagerModule,
+  PageService,
+  SortService,
+  FilterService,
+} from '@syncfusion/ej2-angular-grids';
 import { ToolsComponent } from './tools/tools.component';
 import { FlowchartComponent } from './flowchart/flowchart.component';
 
 @NgModule({
   declarations: [AppComponent, ToolsComponent, FlowchartComponent],
-  imports: [BrowserModule, AppRoutingModule, GridModule, PagerModule, MatPaginatorModule,MatSort,MatSortModule ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    GridModule,
+    PagerModule,
+    MatPaginatorModule,
+    BrowserAnimationsModule,
+
+    MatSortModule,
+    MatTableModule,
+  ],
   providers: [PageService, SortService, FilterService],
   bootstrap: [AppComponent],
 })
