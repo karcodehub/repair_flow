@@ -33,10 +33,23 @@ import { FlowchartComponent } from './flowchart/flowchart.component';
     MatSortModule,
     MatTableModule,
     MatFormFieldModule,
-    MatSort,
     
+  ],
+
+  exports: [
+    BrowserModule,
+    AppRoutingModule,
+    GridModule,
+    PagerModule,
+    MatPaginatorModule,
+    BrowserAnimationsModule,
+    MatSortModule,
+    MatTableModule,
+    MatFormFieldModule,
   ],
   providers: [PageService, SortService, FilterService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  
+}

@@ -1,12 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
 //import { MatSort } from '@angular/material/sort';
-import {Sort} from '@angular/material/sort';
-import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import { PageSettingsModel } from '@syncfusion/ej2-angular-grids';
-import { FilterSettingsModel } from '@syncfusion/ej2-grids';
-import { MatFormFieldModule } from '@angular/material/form-field';
+//import {Sort} from '@angular/material/sort';
+//import { MatPaginatorModule } from '@angular/material/paginator';
+//import { PageSettingsModel } from '@syncfusion/ej2-angular-grids';
+//import { FilterSettingsModel } from '@syncfusion/ej2-grids';
+//import { MatFormFieldModule } from '@angular/material/form-field';
 
 export interface PeriodicElement {
   name: string;
@@ -45,20 +46,26 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class ToolsComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
-
+  checkFilter:any;
   constructor() {}
 
   ngOnInit(): void {
-    //this.dataSource=ELEMENT_DATA
-    // this.dataSource.paginator = this.paginator;
+   // this.dataSource=ELEMENT_DATA
+    //this.dataSource.paginator = this.paginator;
   }
 
-   //@ViewChild(MatSort) sort: MatSort | undefined;
-   @ViewChild(MatPaginator)
-  paginator!: MatPaginator;
+   //@ViewChild(MatSort) sort: MatSort ;
+   //@ViewChild(MatPaginator) paginator: MatPaginator;
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLocaleLowerCase();
+  doFilter(filterValue: any) {
+    //console.log(filterValue.target.value);
+    //this.dataSource.filter = filterValue.trim().toLocaleLowerCase();
+    let activeDrugList2 = this.element.filter(
+      (item: any) => item.productName.toLowerCase().match(value.toLowerCase())
+      // console.log(item.productName, value);
+    );
+
+
   }
 
   /* title= 'my-grid-app';
