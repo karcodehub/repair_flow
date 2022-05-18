@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { PageSettingsModel } from '@syncfusion/ej2-angular-grids';
 import { FilterSettingsModel } from '@syncfusion/ej2-grids';
 
@@ -39,11 +43,20 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class ToolsComponent implements OnInit {
 
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = ELEMENT_DATA;
+  dataSource = new MatTableDataSource (ELEMENT_DATA);
 
   constructor() { }
 
   ngOnInit(): void {
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator= this.paginator;
+  }
+
+  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  applyFilter(filterValue: string){
+    this.dataSource.filter = filterValue.trim().toLocaleLowerCase();
   }
 
  /* title= 'my-grid-app';
