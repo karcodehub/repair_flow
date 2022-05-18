@@ -1,10 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { MatSortModule } from '@angular/material/sort';
-import { MatSort } from '@angular/material/sort';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+//import { MatSort } from '@angular/material/sort';
+import {Sort} from '@angular/material/sort';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { PageSettingsModel } from '@syncfusion/ej2-angular-grids';
 import { FilterSettingsModel } from '@syncfusion/ej2-grids';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 export interface PeriodicElement {
   name: string;
@@ -51,8 +53,9 @@ export class ToolsComponent implements OnInit {
     // this.dataSource.paginator = this.paginator;
   }
 
-  // @ViewChild(MatSort) sort: MatSort;
-  // @ViewChild(MatPaginator) paginator: MatPaginator;
+   //@ViewChild(MatSort) sort: MatSort | undefined;
+   @ViewChild(MatPaginator)
+  paginator!: MatPaginator;
 
   applyFilter(filterValue: string) {
     this.dataSource.filter = filterValue.trim().toLocaleLowerCase();
