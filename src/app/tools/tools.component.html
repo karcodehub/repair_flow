@@ -2,7 +2,7 @@
   <input (Keyup)="applyFilter($event.target.value)" matInput placeholder="Filter">
 </mat-form-field>
 
-<table mat-table [dataSource]= "dataSource" matSort class="mat-elevation-z8">
+<table mat-table [dataSource]= "ELEMENT_DATA" matSort class="mat-elevation-z8">
    
     <!-- Position Column -->
     <ng-container matColumnDef="position">
