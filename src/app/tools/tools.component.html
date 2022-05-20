@@ -1,8 +1,7 @@
 <!--<mat-form-field>-->
-  <input (keyup)="doFilter($event)">
+<input (keyup)="doFilter($event)" />
 
-
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+<table mat-table [dataSource]="myData" matSort class="mat-elevation-z8">
   <!-- Position Column -->
   <ng-container matColumnDef="position">
     <th mat-header-cell mat-sort-header *matHeaderCellDef>No.</th>

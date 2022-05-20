@@ -45,27 +45,43 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class ToolsComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
-  checkFilter:any;
+  //dataSource = new MatTableDataSource(ELEMENT_DATA);
+  dataSource = [
+    { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
+    { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
+    { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
+    { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
+    { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
+    { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
+    { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
+    { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
+    { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
+    { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
+  ];
+  checkFilter: any;
+  myData: any;
   constructor() {}
 
   ngOnInit(): void {
-   // this.dataSource=ELEMENT_DATA
+    // this.dataSource=ELEMENT_DATA
     //this.dataSource.paginator = this.paginator;
+    this.myData = this.dataSource;
+    //console.log('test', this.myData);
+    console.log('-1', this.dataSource);
   }
 
-   //@ViewChild(MatSort) sort: MatSort ;
-   //@ViewChild(MatPaginator) paginator: MatPaginator;
+  //@ViewChild(MatSort) sort: MatSort ;
+  //@ViewChild(MatPaginator) paginator: MatPaginator;
 
   doFilter(filterValue: any) {
-    //console.log(filterValue.target.value);
-    //this.dataSource.filter = filterValue.trim().toLocaleLowerCase();
-    let activeDrugList2 = this.element.filter(
-      (item: any) => item.productName.toLowerCase().match(value.toLowerCase())
-      // console.log(item.productName, value);
+    console.log('0', filterValue.target.value, this.dataSource);
+    this.myData = this.dataSource;
+    let tempDataSource = this.myData;
+    let activeDrugList2 = tempDataSource.filter((item: any) =>
+      item.name.toLowerCase().match(filterValue.target.value.toLowerCase())
     );
-
-
+    this.myData = activeDrugList2;
+    console.log('1', this.dataSource);
   }
 
   /* title= 'my-grid-app';
