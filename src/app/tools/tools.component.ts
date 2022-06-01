@@ -167,14 +167,16 @@ export class ToolsComponent implements OnInit {
       var activeDrugList2 = tempDataSource.filter(
         (item: { country: any }) => item.country == this.country
       );
-    }
-
-    if (this.sector) {
+      this.myData = activeDrugList2;
+    } else if (this.sector) {
       this.data = this.data.filter(
         (item: { sector: any }) => item.sector == this.sector
       );
+      this.myData = activeDrugList2;
+    } else {
+      this.myData = this.dataSource;
     }
-    this.myData = activeDrugList2;
+
     /*let you have selected India as country and IT sector.
     
     you will get an object here i.e.
