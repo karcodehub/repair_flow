@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatSort, Sort} from '@angular/material/sort';
+import {GenericListFilterModule} from 'generic-list-filter';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import {
   PageService,
   SortService,
   FilterService,
+  
 } from '@syncfusion/ej2-angular-grids';
 import { ToolsComponent } from './tools/tools.component';
 import { FlowchartComponent } from './flowchart/flowchart.component';
@@ -33,7 +35,7 @@ import { FlowchartComponent } from './flowchart/flowchart.component';
     MatSortModule,
     MatTableModule,
     MatFormFieldModule,
-    
+    GenericListFilterModule,
   ],
 
   exports: [
@@ -46,6 +48,7 @@ import { FlowchartComponent } from './flowchart/flowchart.component';
     MatSortModule,
     MatTableModule,
     MatFormFieldModule,
+    GenericListFilterModule,
   ],
   providers: [PageService, SortService, FilterService],
   bootstrap: [AppComponent],

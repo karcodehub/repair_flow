@@ -4,7 +4,7 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 //import { MatSort } from '@angular/material/sort';
 //import {Sort} from '@angular/material/sort';
-//import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginatorModule } from '@angular/material/paginator';
 //import { PageSettingsModel } from '@syncfusion/ej2-angular-grids';
 //import { FilterSettingsModel } from '@syncfusion/ej2-grids';
 //import { MatFormFieldModule } from '@angular/material/form-field';
@@ -60,6 +60,17 @@ export class ToolsComponent implements OnInit {
   ];
   checkFilter: any;
   myData: any;
+  //data: any;
+  country: any;
+  sector: any;
+  
+  filterList = {
+    country : ['India', 'USA', 'Japan', 'Australia'],
+    sector: ['IT', 'Agriculture', 'Medical']
+    //here you can add as many filters as you want.
+    }; 
+  data: any;
+
   constructor() {}
 
   ngOnInit(): void {
@@ -84,6 +95,32 @@ export class ToolsComponent implements OnInit {
     console.log('1', this.dataSource);
   }
 
+  //copyData = this.data;
+
+  filterChange(appliedfilters: any) {
+    //this.data = this.copyData;
+    console.log(appliedfilters);
+    this.country = appliedfilters.appliedFilterValues.country;
+    this.sector = appliedfilters.appliedFilterValues.sector;
+
+    if(this.country) {
+      this.data = this.data.filter((item: { country: any; }) =>item.country == this.country);
+    }
+
+    if(this.sector) {
+      this.data = this.data.filter((item: { sector: any; }) =>item.sector == this.sector);
+    }
+    /*let you have selected India as country and IT sector.
+    
+    you will get an object here i.e.
+
+   { appliedFilterValues: {country: "India",sector: "IT"}
+   isFilter: true
+   }
+    */
+    
+    //now do your awesome filtering work here.
+  } 
   /* title= 'my-grid-app';
   public filterOptions : FilterSettingsModel ={
     ignoreAccent: true,

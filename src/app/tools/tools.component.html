@@ -1,4 +1,10 @@
+<app-filter
+[list]="filterList" 
+(onFilterChange)="filterChange($event)" >
+</app-filter>
+
 <!--<mat-form-field>-->
+
 <div class="row">
   <input
     class="form-control"
@@ -36,5 +42,7 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <mat-paginator [pageSizeOptions]="[5, 20]" showFirstLastButtons></mat-paginator>

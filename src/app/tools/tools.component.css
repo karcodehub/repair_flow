@@ -2,3 +2,17 @@ table {
     width: 100%;
   }
   
+  .app-btn {
+    height: 32px;
+    width: 110px;
+    background: #f28100; 
+    border: none;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
