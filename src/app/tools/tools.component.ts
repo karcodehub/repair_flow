@@ -188,7 +188,8 @@ export class ToolsComponent implements OnInit {
       );
       this.myData = activeDrugList2;
     } else if (this.sector) {
-      this.data = this.data.filter(
+      //this.data = this.data.filter(
+        activeDrugList2 = tempDataSource.filter(
         (item: { sector: any }) => item.sector == this.sector
       );
       this.myData = activeDrugList2;
