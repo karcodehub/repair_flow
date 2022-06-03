@@ -44,78 +44,97 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./tools.component.css'],
 })
 export class ToolsComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position','sector', 'name', 'country', 'weight'];
   //dataSource = new MatTableDataSource(ELEMENT_DATA);
   dataSource = [
     {
       position: 1,
-      name: 'Hydrogen',
+      name: 'TX10 Bit',
       weight: 1.0079,
       symbol: 'H',
-      country: 'India',
+      country: 'DE',
+      sector: 'BITS',
     },
     {
       position: 2,
-      name: 'Helium',
+      name: 'TX15 Bit',
       weight: 4.0026,
       symbol: 'He',
-      country: 'Germany',
+      country: 'DE',
+      sector: 'BITS',
     },
     {
       position: 3,
-      name: 'Lithium',
+      name: 'TX25 Bit',
       weight: 6.941,
       symbol: 'Li',
-      country: 'India',
+      country: 'NL',
+      sector: 'BITS',
     },
     {
       position: 4,
-      name: 'Beryllium',
+      name: 'Combi Spanner 18mm',
       weight: 9.0122,
       symbol: 'Be',
-      country: 'USA',
+      country: 'UK',
+      sector: 'Spanner & Wrench',
     },
     {
       position: 5,
-      name: 'Boron',
+      name: 'Adjustable wrench',
       weight: 10.811,
       symbol: 'B',
-      country: 'Aftrica',
+      country: 'SE',
+      sector: 'Spanner & Wrench',
     },
     {
       position: 6,
-      name: 'Carbon',
+      name: 'Adjustable wrench',
       weight: 12.0107,
       symbol: 'C',
-      country: 'Germany',
+      country: 'FL',
+      sector: 'BITS',
     },
     {
       position: 7,
-      name: 'Nitrogen',
+      name: ' Scooter flashing cable - V3X/V4',
       weight: 14.0067,
       symbol: 'N',
-      country: 'Nigeria',
+      country: 'CH',
+      sector: 'Special tool',
     },
     {
       position: 8,
-      name: 'Oxygen',
+      name: 'IoT Flashing Cable',
       weight: 15.9994,
       symbol: 'O',
-      country: 'India',
+      country: 'FR',
+      sector: 'Special tool',
     },
     {
       position: 9,
-      name: 'Fluorine',
+      name: 'J-Link BASE - V3X/V4',
       weight: 18.9984,
       symbol: 'F',
-      country: 'Srilanka',
+      country: 'ES',
+      sector: 'Special tool',
     },
     {
       position: 10,
-      name: 'Neon',
+      name: 'Bit Adapter 1/4" 8mm',
+      weight: 20.1797,
+      symbol: 'Ne',
+      country: 'IT',
+      sector: 'Spanner & Wrench',
+    },
+
+    {
+      position: 11,
+      name: 'Bit case',
       weight: 20.1797,
       symbol: 'Ne',
       country: 'USA',
+      sector: 'BITS',
     },
   ];
   checkFilter: any;
@@ -125,8 +144,8 @@ export class ToolsComponent implements OnInit {
   sector: any;
 
   filterList = {
-    country: ['India', 'USA', 'Japan', 'Australia'],
-    sector: ['IT', 'Agriculture', 'Medical'],
+    country: ['DE', 'ES', 'IT', 'UK','SE','DK','FL','NL','CH',],
+    sector: ['BITS', 'Spanner & Wrench', 'Special tool', 'Screw Drivers & Allen Key'],
     //here you can add as many filters as you want.
   };
   data: any;
